@@ -1,0 +1,95 @@
+Script started on Mon 09 Oct 2017 07:30:04 PM EDT
+]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ make
+flex branch.l
+gcc -Wall -pedantic -g -pg -c lex.yy.c -lfl
+[01m[Klex.yy.c:1300:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kyyunput[m[K’ defined but not used [-Wunused-function]
+     static void yyunput (int c, char * yy_bp )
+[01;32m[K                 ^[m[K
+[01m[Klex.yy.c:1343:16:[m[K [01;35m[Kwarning: [m[K‘[01m[Kinput[m[K’ defined but not used [-Wunused-function]
+     static int input  (void)
+[01;32m[K                ^[m[K
+gcc -Wall -pedantic -g -pg -c parser.c
+gcc -Wall -pedantic -g -pg -c emitter.c
+gcc -Wall -pedantic -g -pg -c symbol.c
+gcc -Wall -pedantic -g -pg -c init.c
+[01m[Kinit.c:12:14:[m[K [01;35m[Kwarning: [m[Kinvalid use of structure with flexible array member [-Wpedantic]
+ struct entry keywords[] = {
+[01;32m[K              ^[m[K
+gcc -Wall -pedantic -g -pg -c error.c
+gcc -Wall -pedantic -g -pg -c main.c
+gcc -Wall -pedantic -g -pg lex.yy.o parser.o emitter.o symbol.o init.o error.o main.o -o pa1cs441f17
+]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ ./ZZpa1cs441f17.sh 
+”Beginning Testing”
+TESTING: ./myTests/simple.branch
+TESTING: ./myTests/test000.branch
+TESTING: ./myTests/test0.branch
+line 3; Error: Syntax error - unexpected/unmatched token
+TESTING: ./myTests/test10.branch
+line 5; Error: Syntax error - unexpected/unmatched token
+TESTING: ./myTests/test2.branch
+line 6; Error: Syntax error - unexpected/unmatched token
+TESTING: ./myTests/test3m.branch
+line 4; Error: Syntax requires that your goto statement starts with 'GOTO' and ends with a valid line number
+TESTING: ./myTests/test4.branch
+line 2; Error: Syntax requires a line to be started with a label, followed by at least one statement
+TESTING: ./myTests/test4m.branch
+line 2; Error: Syntax requires a line to be started with a label, followed by at least one statement
+TESTING: ./myTests/test5.branch
+line 4; Error: Syntax requires that your goto statement starts with 'GOTO' and ends with a valid line number
+TESTING: ./myTests/test.branch
+line 4; Error: Syntax requires that your branching statements start with 'GOTO' and a line number and a ';', followed by a 'ELSE' 'GOTO' and a line number and a ';'
+TESTING: ./myTests/testj.branch
+]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ clcear[K[K[K[Kear
+[3;J[H[2J]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ make clean[K[K[K[K[K[K[K[K[K[Kcat test_results.out 
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+
+
+Program Passed Parsing
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+
+
+Program Passed Parsing
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+59
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+46
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+59
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+recursive descent for BRANCH441 Language: Jacob Pawlak, CS441G Compilers, BRANCH441 Project 1
+Mon Oct  9 19:30:15 2017
+
+
+
+Program Passed Parsing
+]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ clear
+[3;J[H[2J]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ make clean
+rm -f lex.yy.o parser.o emitter.o symbol.o init.o error.o main.o lex.yy.c pa1cs441f17
+]0;jacob@Lucille2: ~/Desktop/Fall2017/CS441/ProgramAssignment1[01;32mjacob@Lucille2[00m:[01;34m~/Desktop/Fall2017/CS441/ProgramAssignment1[00m$ exit
+exit
+
+Script done on Mon 09 Oct 2017 07:30:49 PM EDT

@@ -1,0 +1,79 @@
+HANDOUT FOR PA1 CS441-001 FALL 2017
+Recursive Descent infix to postfix translator for arithmetical expressions
+CS441 CS UK JWJ
+
+
+Jacob Pawlak
+CS441G Compilers
+October 7th, 2017
+pa1
+
+
+This directory contains the code for a simple infix-to-posfix translator  based
+on  a translator presented in Aho, Sethi, Ullman Compilers book. Refer to that
+book for details.
+
+The code has been modified to use flex to generate a lexer and the linear
+symbol table has been changed to an efficient hash table.
+
+Directions
+  - compile with the command: make
+  - run the program: ./programAssignment1
+  - input any valid expression containing
+    * positive integers, identifiers
+    * correctly nested parenthesis
+    * arithmetic operations: +, -, *, /
+  - terminate expression with a ';' and press return
+  - quit with <Control> + 'c'
+
+change 1
+  - removed compile warnings by prototyping functions in global.h
+
+change 2
+  - branch.l is a flex file that generates yylex(), which replaces
+    lexer() in lexer.c
+  - replace lexer() with yylex() in parser.c
+  - added the flex routine to Makefile
+
+change 3
+  - changed the implementation of the symbol table from a linear
+    table to the hash table found in the Algorithms and Data Structures
+    handout
+  - changed the type of symtable from entry to entry*
+  - added entry *tokensym to global.h to replace tokenval for
+    the values in the symtable
+  - combined insert(str, current_token) with lookup(str, current_token), i.e. if it is not
+    found in the lookup then it is inserted
+  - changed the print statement for identifiers in emitter.c to
+    use the global tokensym
+
+
+---------------- JACOB's EDITS ----------------
+
+To run the program, please follow the steps:
+
+make
+./ZZpa1cs441f17.sh
+make clean
+
+
+
+Changes made in:
+
+	branch.l (i2p.l):
+		*Added the tokens 'string' and 'quote'
+		*Added the extra rules for the tokens in Branch441
+
+	parcer.c
+		*Added all of the parse_X() functions for the CFG
+		*Fixed parse() so that it would parse the program passed to it.
+		*Edited the error message in match()
+	
+	main.c
+		*Edited the print statement to reflect my name and the Branch441 programming language
+	
+	symbol.c
+		*Added the print_symbol_table function
+		
+
+	
