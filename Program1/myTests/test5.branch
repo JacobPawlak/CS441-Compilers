@@ -1,0 +1,4 @@
+0 BEGIN
+1 a = b + c * d; GOTO 2;
+2 d = 314;
+3 END.

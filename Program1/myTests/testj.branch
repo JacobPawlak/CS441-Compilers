@@ -1,0 +1,6 @@
+100 BEGIN
+1 a = a + b * c; GOTO 2;
+2 b = a + b * d; GOTO 5;
+3 IF (a > b) GOTO 6 ELSE GOTO 7;
+6 NULL; GOTO 7;
+7 END.

@@ -1,0 +1,7 @@
+ 0 BEGIN
+ 1 a = 4 + 6; GOTO 2;
+ 2 IF ( a + 1 < a * a - 90 ) GOTO 3 ELSE GOTO 4;
+ 3 NULL; GOTO 9;
+ 4 PRINT "a larger or equal to 0"; GOTO 7;
+ 7 PRINT a; GOTO 9;
+ 9 END.

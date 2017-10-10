@@ -1,0 +1,4 @@
+0 BEGIN
+2 a = 5; GOTO 6;
+6 NULL; GOTO 7;
+7 END 
